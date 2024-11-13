@@ -16,38 +16,39 @@ header {
     background: center / cover url("img/clouds-alexander-jawfox-unsplash.jpg");
     background-color: #1a3f4e;
     text-align: center;
+
+    .logo-bar {
+        --logo-height: 3.5rem;
+
+        height: calc(--logo-height + 2rem);
+        width: 100%;
+        background-color: #0a2f3e90;
+        margin: 0;
+        padding: 1rem;
+    }
+
+    img.logo {
+        height: var(--logo-height);
+        position: relative;
+        top: calc(var(--logo-height) * 0.10);
+    }
+
+    .brand-name {
+        font-size: var(--logo-height);
+        position: relative;
+        top: calc(var(--logo-height) * -0.05);
+    }
+
+    .credit {
+        display: none;
+    }
+
+    a {
+        color: #fff;
+    }
 }
 
-header .logo-bar {
-    --logo-height: 3.5rem;
-
-    height: calc(--logo-height + 2rem);
-    width: 100%;
-    background-color: #0a2f3e90;
-    margin: 0;
-    padding: 1rem;
-}
-
-header img.logo {
-    height: var(--logo-height);
-    position: relative;
-    top: calc(var(--logo-height) * 0.10);
-}
-
-header .brand-name {
-    font-size: var(--logo-height);
-    position: relative;
-    top: calc(var(--logo-height) * -0.05);
-}
-
-header .credit {
-    display: none;
-}
-
-header a {
-    color: #fff;
-}
-
+/* Wide and desktop settings */
 @media (min-width: 40rem) {
     body {
         flex-direction: row;
@@ -59,23 +60,23 @@ header a {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        .logo-bar {
+            --logo-height: max(3rem, calc(1rem + 4vw));
+
+            margin-top: 20vh;
+            flex: 0;
+        }
+
+        .credit {
+            display: block;
+            font-size: 0.7rem;
+            min-height: 1.6rem;
+            opacity: 0.75;
+            flex: 0;
+        }
     }
 
-    header .logo-bar {
-        --logo-height: max(3rem, calc(1rem + 4vw));
-
-        margin-top: 20vh;
-        flex: 0;
-    }
-
-    header .credit {
-        display: block;
-        font-size: 0.7rem;
-        min-height: 1.6rem;
-        opacity: 0.75;
-        flex: 0;
-    }
-    
     main {
         flex: 2;
     }
