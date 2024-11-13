@@ -8,6 +8,10 @@ const confirmPasswordInput = document.getElementById('confirm-password');
 
 const PHONE_NUMBER_REGEX = /^[0-9 .()+\-]+$/;
 
+const MIN_PASSWORD_LENGTH = 8;
+passwordInput.setAttribute('minlength', "8");
+confirmPasswordInput.setAttribute('minlength', "8");
+
 form.addEventListener('submit', (event) => {
     if (!isFormValid()) {
         event.preventDefault();
@@ -17,21 +21,55 @@ form.addEventListener('submit', (event) => {
     }
 });
 
-emailInput.addEventListener("input", (event) => {
+emailInput.addEventListener('input', (event) => {
     if (emailInput.validity.valid) {
         clearValidationMessage(emailInput);
     } else if (emailInput.validity.valueMissing) {
         setValidationMessage(emailInput, "Email address is required");
     } else {
-        setValidationMessage(emailInput, "Please enter a valid email address");
+        setValidationMessage(emailInput,
+            "Please enter a valid email address");
     }
 });
 
-phoneNumberInput.addEventListener("input", (event) => {
+phoneNumberInput.addEventListener('input', (event) => {
     if (PHONE_NUMBER_REGEX.test(phoneNumberInput.value)) {
         clearValidationMessage(phoneNumberInput);
     } else {
-        setValidationMessage(phoneNumberInput, "Enter a phone number: e.g. 800-555-1234");
+        setValidationMessage(phoneNumberInput,
+            "Enter a phone number: e.g. 800-555-1234");
+    }
+});
+
+passwordInput.addEventListener('input', (event) => {
+    if (passwordInput.validity.valid) {
+        clearValidationMessage(passwordInput);
+    } else if (passwordInput.validity.valueMissing) {
+        setValidationMessage(passwordInput, "Password is required");
+    } else if (passwordInput.validity.tooShort) {
+        setValidationMessage(passwordInput,
+            `Must be at least ${MIN_PASSWORD_LENGTH} characters long`)
+    } else if (!passwordsMatch()) {
+        setValidationMessage(passwordInput, "Passwords do not match");
+    } else {
+        setValidationMessage(passwordInput, "Invalid password");
+    }
+});
+
+confirmPasswordInput.addEventListener('input', (event) => {
+    if (confirmPasswordInput.validity.valueMissing) {
+        setValidationMessage(confirmPasswordInput,
+            "Please confirm your password");
+    } else {
+        clearValidationMessage(confirmPasswordInput);
+    }
+    
+    if (passwordInput.validity.valid) {
+        if (passwordsMatch()) {
+            clearValidationMessage(passwordInput);
+        } else {
+            setValidationMessage(passwordInput, "Passwords do not match");
+        }
     }
 });
 
