@@ -59,11 +59,16 @@ main {
     justify-content: center;
 
     .pitch {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    div.pitch {
         padding: 0 var(--horz-margin);
         max-width: 45rem;
     }
 
-    .pitch p {
+    div.pitch p {
         margin: 1rem 0;
     }
     
