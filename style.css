@@ -13,29 +13,39 @@ body {
 
 header {
     color: #fff;
-    background-color: #789;
+    background: center / cover url("img/clouds-alexander-jawfox-unsplash.jpg");
+    background-color: #1a3f4e;
     text-align: center;
-    padding: 1rem;
 }
 
 header .logo-bar {
     --logo-height: 3.5rem;
 
-    margin: auto;
+    height: calc(--logo-height + 2rem);
+    width: 100%;
+    background-color: #0a2f3e90;
+    margin: 0;
+    padding: 1rem;
 }
 
 header img.logo {
     height: var(--logo-height);
     position: relative;
-    top: calc(var(--logo-height) * 0.15);
+    top: calc(var(--logo-height) * 0.10);
 }
 
 header .brand-name {
     font-size: var(--logo-height);
+    position: relative;
+    top: calc(var(--logo-height) * -0.05);
 }
 
 header .credit {
     display: none;
+}
+
+header a {
+    color: #fff;
 }
 
 @media (min-width: 40rem) {
@@ -48,18 +58,21 @@ header .credit {
 
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
     }
 
     header .logo-bar {
         --logo-height: max(3rem, calc(1rem + 4vw));
 
         margin-top: 20vh;
-        flex: 1;
+        flex: 0;
     }
 
     header .credit {
         display: block;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        min-height: 1.6rem;
+        opacity: 0.75;
         flex: 0;
     }
     
