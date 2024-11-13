@@ -147,6 +147,11 @@ form {
     }
 
     .validation-message {
+        display: none;
+    }
+
+    .post-submit .validation-message {
+        display: block;
         font-size: 0.7rem;
         color: var(--invalid-color, red);
     }
