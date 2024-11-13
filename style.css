@@ -5,6 +5,9 @@
 }
 
 body {
+    --theme-color: #3c667c;
+    --theme-color-highlight: #406a80;
+
     color: #000000;
     background-color: #f0f0f0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -16,7 +19,7 @@ body {
 header {
     color: #fff;
     background: center / cover url("img/clouds-alexander-jawfox-unsplash.jpg");
-    background-color: #1a3f4e;
+    background-color: var(--theme-color, black);
     text-align: center;
 
     .logo-bar {
@@ -82,7 +85,7 @@ main {
 
     form > button {
         color: white;
-        background-color: #3c667c;
+        background-color: var(--theme-color, black);
         font-weight: bold;
         border: none;
         border-radius: 0.3rem;
@@ -92,6 +95,12 @@ main {
 
     .login-link {
         margin: 0.5rem var(--horz-margin);
+    }
+
+    a {
+        font-weight: bold;
+        color: var(--theme-color, black);
+        text-decoration: none;
     }
 }
 
