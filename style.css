@@ -18,12 +18,20 @@ header {
     padding: 1rem;
 }
 
-header .logo {
+header .logo-bar {
+    --logo-height: 3.5rem;
+
     margin: auto;
 }
 
+header img.logo {
+    height: var(--logo-height);
+    position: relative;
+    top: calc(var(--logo-height) * 0.15);
+}
+
 header .brand-name {
-    font-size: 3rem;
+    font-size: var(--logo-height);
 }
 
 header .credit {
@@ -42,7 +50,9 @@ header .credit {
         flex-direction: column;
     }
 
-    header .logo {
+    header .logo-bar {
+        --logo-height: max(3rem, calc(1rem + 4vw));
+
         margin-top: 20vh;
         flex: 1;
     }
