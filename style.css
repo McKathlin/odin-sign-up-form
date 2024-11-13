@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    font-size: clamp(10pt, calc(8pt + 0.5vw), 20pt);
+}
+
 body {
     --theme-color: #3c667c;
     --theme-color-highlight: #3e6e8a;
