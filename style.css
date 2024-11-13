@@ -78,17 +78,18 @@ main {
         font-weight: 500;
     }
 
-    div.pitch {
+    > div {
         padding: 0 var(--horz-margin);
+        margin-top: 1rem;
         max-width: 45rem;
     }
 
-    div.pitch p {
+    p {
         margin: 1rem 0;
     }
 
     .login-link {
-        margin: 0.5rem var(--horz-margin);
+        margin: 0.5rem 0;
     }
 
     a {
