@@ -78,30 +78,6 @@ main {
     div.pitch p {
         margin: 1rem 0;
     }
-    
-    form > .input-container {
-        border: none;
-        background-color: #ffffff;
-        box-shadow: 0px 5px 5px -1px #00000020;
-        padding: 1rem var(--horz-margin);
-        margin: 1rem 0;
-    }
-
-    form button {
-        color: white;
-        background-color: var(--theme-color, black);
-        font-weight: bold;
-        border: none;
-        border-radius: 0.3rem;
-        margin: 0.5rem var(--horz-margin);
-        padding: 0.8rem 2.4rem;
-        cursor: pointer;
-        box-shadow: 5px 5px 5px 0 #00000018;
-    }
-
-    form button:hover {
-        background-color: var(--theme-color-highlight, blue);
-    }
 
     .login-link {
         margin: 0.5rem var(--horz-margin);
@@ -120,10 +96,34 @@ main {
 }
 
 form {
+    > .input-container {
+        border: none;
+        background-color: #ffffff;
+        box-shadow: 0px 5px 5px -1px #00000020;
+        padding: 1rem var(--horz-margin);
+        margin: 1rem 0;
+    }
+
     fieldset {
         border: none;
         display: flex;
         flex-wrap: wrap;
+    }
+
+    button {
+        color: white;
+        background-color: var(--theme-color, black);
+        font-weight: bold;
+        border: none;
+        border-radius: 0.3rem;
+        margin: 0.5rem var(--horz-margin);
+        padding: 0.8rem 2.4rem;
+        cursor: pointer;
+        box-shadow: 5px 5px 5px 0 #00000018;
+    }
+
+    button:hover {
+        background-color: var(--theme-color-highlight, blue);
     }
 }
 
