@@ -48,6 +48,17 @@ header {
     }
 }
 
+main {
+    --left-pad: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    
+}
+
 /* Wide and desktop settings */
 @media (min-width: 40rem) {
     body {
