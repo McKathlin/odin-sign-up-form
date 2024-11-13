@@ -142,7 +142,7 @@ form {
         outline: none;
     }
 
-    input.post-submit:invalid {
+    .post-submit input:invalid {
         border-color: var(--invalid-color, red);
     }
 
