@@ -12,7 +12,22 @@ body {
 }
 
 header {
+    color: #fff;
     background-color: #789;
+    text-align: center;
+    padding: 1rem;
+}
+
+header .logo {
+    margin: auto;
+}
+
+header .brand-name {
+    font-size: 3rem;
+}
+
+header .credit {
+    display: none;
 }
 
 @media (min-width: 40rem) {
@@ -22,6 +37,20 @@ header {
 
     header {
         flex: 1;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    header .logo {
+        margin-top: 20vh;
+        flex: 1;
+    }
+
+    header .credit {
+        display: block;
+        font-size: 0.8rem;
+        flex: 0;
     }
     
     main {
