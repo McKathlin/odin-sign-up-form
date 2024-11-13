@@ -11,6 +11,7 @@
 body {
     --theme-color: #3c667c;
     --theme-color-highlight: #3e6e8a;
+    --invalid-color: #dd2200;
 
     color: #000000;
     background-color: #f0f0f0;
@@ -119,10 +120,18 @@ form {
 
     label {
         display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.07rem;
+        text-transform: uppercase;
     }
 
     input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
         width: 14rem;
+    }
+
+    .validation-message {
+        font-size: 0.7rem;
+        color: var(--invalid-color, red);
     }
 
     button {
