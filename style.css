@@ -6,7 +6,7 @@
 
 body {
     --theme-color: #3c667c;
-    --theme-color-highlight: #406a80;
+    --theme-color-highlight: #3e6e8a;
 
     color: #000000;
     background-color: #f0f0f0;
@@ -83,7 +83,7 @@ main {
         margin: 1rem 0;
     }
 
-    form > button {
+    form button {
         color: white;
         background-color: var(--theme-color, black);
         font-weight: bold;
@@ -91,6 +91,12 @@ main {
         border-radius: 0.3rem;
         margin: 0.5rem var(--horz-margin);
         padding: 0.8rem 2.4rem;
+        cursor: pointer;
+        box-shadow: 5px 5px 5px 0 #00000018;
+    }
+
+    form button:hover {
+        background-color: var(--theme-color-highlight, blue);
     }
 
     .login-link {
@@ -99,8 +105,13 @@ main {
 
     a {
         font-weight: bold;
-        color: var(--theme-color, black);
+        color: var(--theme-color, darkblue);
         text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--theme-color-highlight, blue);
+        text-decoration: underline;
     }
 }
 
